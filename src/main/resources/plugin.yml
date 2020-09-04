@@ -1,8 +1,0 @@
-name: PlayerStatisticsPlugin
-version: ${project.version}
-main: org.dreamndelight.playerstatisticsplugin.PlayerStatisticsPlugin
-api-version: 1.16
-depend: [ PlayerStatistics ]
-authors: [ dehys, OverDodo ]
-description: A Plugin that utilizes the PlayerStatistics-Lib from dehys & OverDodo
-website: dehys.com
