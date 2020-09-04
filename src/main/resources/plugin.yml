@@ -1,0 +1,35 @@
+name: PlayerStatisticsPlugin
+authors:
+  - dehys
+  - OverDodo
+main: org.dreamndelight.playerstatistics.plugin.Main
+version: 1.0.0
+depend:
+  - PlayerStatistics
+
+commands:
+  stats:
+    description: A simple stats command that displays some of the players statistics
+    permission: playerstatistics.command.stats
+
+
+
+
+permissions:
+  playerstatistics.*:
+    description: Grants all permissions for the PlayerStatistics-Plugin
+    children:
+      - playerstatistics.commands.*
+
+
+  playerstatistics.command.*:
+    description: Grants all command-based permissions for the PlayerStatistics-Plugin
+    children:
+      - playerstatistics.command.stats
+
+
+
+
+  #Plain permissions
+  playerstatistics.command.stats:
+    description: Allows for the use of /stats
