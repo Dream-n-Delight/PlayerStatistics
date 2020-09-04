@@ -1,0 +1,14 @@
+#Configuration File for PlayerStatistics-Plugin
+#Developed by dehys and OverDodo
+
+#messages: The overall messages sent by the plugin to a player.
+messages:
+
+  #error: All messages that are related to an error, whether it was caused by the player or it being internal
+  error:
+
+    #notaplayer: Message for when a command specifically made for players is run by something, that is not a player (e.g Console)
+    notaplayer: "&cThis command can only be run by a player"
+
+    #playernotfound: Message for when a player could not be found.
+    playernotfound: "&cThis player could not be found."
