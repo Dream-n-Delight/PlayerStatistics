@@ -34,6 +34,7 @@ public class StatsCommand implements CommandExecutor {
             player.sendMessage(ChatColor.GOLD + "======== Your Statistics ========");
             player.sendMessage(ChatColor.GOLD + "Kills: " + statistic.getStatistic(Statistic.MOB_KILLS));
             player.sendMessage(ChatColor.GOLD + "Deaths: " + statistic.getStatistic(Statistic.DEATHS));
+            player.sendMessage(ChatColor.GOLD + "Blocks Broken: " + statistic.getStatistic(Statistic.BLOCKS_BROKEN));
             player.sendMessage(ChatColor.GOLD + "======== Your Statistics ========");
             return true;
         }
@@ -50,6 +51,7 @@ public class StatsCommand implements CommandExecutor {
         player.sendMessage(ChatColor.GOLD + "======== " + username + "'s Statistics ========");
         player.sendMessage(ChatColor.GOLD + "Kills: " + statistic.getStatistic(Statistic.MOB_KILLS));
         player.sendMessage(ChatColor.GOLD + "Deaths: " + statistic.getStatistic(Statistic.DEATHS));
+        player.sendMessage(ChatColor.GOLD + "Blocks Broken: " + statistic.getStatistic(Statistic.BLOCKS_BROKEN));
         player.sendMessage(ChatColor.GOLD + "======== " + username + "'s Statistics ========");
         return true;
     }
