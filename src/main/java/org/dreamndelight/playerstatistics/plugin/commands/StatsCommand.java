@@ -5,8 +5,8 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.dreamndelight.playerstatistics.data.PlayerStatistic;
-import org.dreamndelight.playerstatistics.enums.Statistic;
+import org.dreamndelight.playerstatistics.lib.data.PlayerStatistic;
+import org.dreamndelight.playerstatistics.lib.enums.Statistic;
 import org.dreamndelight.playerstatistics.plugin.Main;
 import org.jetbrains.annotations.NotNull;
 

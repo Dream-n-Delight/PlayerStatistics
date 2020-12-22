@@ -1,12 +1,15 @@
 package org.dreamndelight.playerstatistics.plugin;
 
+import org.bukkit.Bukkit;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.TabExecutor;
+import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.dreamndelight.playerstatistics.main.PlayerStatistics;
+import org.dreamndelight.playerstatistics.lib.main.PlayerStatistics;
 import org.dreamndelight.playerstatistics.plugin.commands.StatsCommand;
 
 import java.util.Objects;
+import java.util.logging.Level;
 
 public class Main extends JavaPlugin {
 
@@ -22,7 +25,11 @@ public class Main extends JavaPlugin {
         super.onEnable();
         instance = this;
         saveDefaultConfig();
-        setupStatistics();
+        if (!setupStatistics()) {
+            getLogger().log(Level.SEVERE, "PlayerStatisticsLib could not be accessed via the provider.");
+            getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
 
         setupCommands();
 
@@ -33,8 +40,16 @@ public class Main extends JavaPlugin {
         return this.playerStatistics;
     }
 
-    private void setupStatistics() {
-        if (playerStatistics == null) playerStatistics = new PlayerStatistics();
+    private boolean setupStatistics() {
+        if (playerStatistics == null) {
+            RegisteredServiceProvider<PlayerStatistics> provider = Bukkit.getServer().getServicesManager().getRegistration(PlayerStatistics.class);
+            if (provider != null) {
+                this.playerStatistics = provider.getProvider();
+                return true;
+            }
+            return false;
+        }
+        return false;
     }
 
 

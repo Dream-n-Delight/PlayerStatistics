@@ -6,6 +6,9 @@ main: org.dreamndelight.playerstatistics.plugin.Main
 version: 1.0.0
 depend:
   - PlayerStatistics
+load: STARTUP
+database: true
+api-version: 1.16
 
 commands:
   stats:
